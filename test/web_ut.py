@@ -10,9 +10,18 @@ from selenium.webdriver.chrome.options import Options
 
 class ISelenium(unittest.TestCase):
     # 读入配置文件
+    #linux
+    # def get_config(self):
+        # config = configparser.ConfigParser()
+        # config.read(os.path.join(os.environ['HOME'], 'iselenium.ini'))
+        # return config
+        
     def get_config(self):
         config = configparser.ConfigParser()
-        config.read(os.path.join(os.environ['HOME'], 'iselenium.ini'))
+        # 读取user.home 位置os.environ['HOME']
+        # windows
+        # config.read(os.path.join(os.environ['HOMEPATH'], 'iselenium.ini'))
+        config.read('C:\\Users\\WBPC0154\\iselenium.ini',encoding='utf-8')   
         return config
 
     def tearDown(self):
